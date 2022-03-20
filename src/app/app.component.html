@@ -1,0 +1,41 @@
+<main>
+  <div class="container">
+    <div class="container__header"> 
+      <input class="search_class" (change)="searchUser(search.value)" #search type="text" placeholder="Search Github User" >
+      <div class="container__header__absolute_box" (click)="searchUser(search.value)">
+        <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.25 19.25L15.5 15.5M4.75 11C4.75 7.54822 7.54822 4.75 11 4.75C14.4518 4.75 17.25 7.54822 17.25 11C17.25 14.4518 14.4518 17.25 11 17.25C7.54822 17.25 4.75 14.4518 4.75 11Z"></path>
+        </svg>
+      </div>
+    </div>
+    <div class="container__body">
+      <div class="container__body__title">
+        <p class="container__body__title">Users</p>
+      </div>
+      <div class="container__body__users" *ngIf="!flag">
+        <div class="card_user" *ngFor="let card of arr_users"  (click)="goToPerfil(card)">
+          <div class="card_user__pic" >
+            <img src="{{card.avatar_url}}" onerror="href='https://cdn-icons-png.flaticon.com/512/38/38401.png'">
+          </div>
+          <div class="card_user__description">
+            <p class="card_user__description__title">User:</p>
+            <p class="card_user__description__user"> {{card.login}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="user_no_found"  *ngIf="flag">
+        <div class="user_no_found__icon">
+          <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <circle cx="12" cy="8" r="3.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></circle>
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12.25 19.25H6.94953C5.77004 19.25 4.88989 18.2103 5.49085 17.1954C6.36247 15.7234 8.23935 14 12.25 14"></path>
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.25 19.25L15.75 15.75"></path>
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 19.25L19.25 15.75"></path>
+          </svg>          
+       </div>
+       <div class="user_no_found__description">
+        <p>User not found</p>
+       </div>
+      </div>
+    </div>
+  </div>
+</main>

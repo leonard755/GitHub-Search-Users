@@ -1,0 +1,137 @@
+main{
+    background-color: #F0F0F0;
+    max-width: 100%;
+    height: 100%;
+    display:flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.container{
+max-width: 400px;
+width: 100%;
+height: 100vh;
+display: flex;
+flex-direction: column;
+font-size: 14px;
+    &__header{
+        margin-top: 50px;
+        height: 50px !important;
+        position: relative;
+        border-radius: 5px;
+        display: flex;
+        position:relative;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+        &__absolute_box{
+            position: absolute;
+            top: 14px;
+            left: 15px;
+            cursor:pointer
+        }
+    }
+    &__body{
+        margin-top: 20px;
+        margin-bottom: 50px;
+        display: flex;
+        flex: 1;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+        background-color: white;
+        flex-direction: column;
+        height: 100%;
+        padding: 20px;
+        overflow: auto;
+        &__title{
+            height: 50px;
+            display: flex;
+            align-items: center;
+            color: #000;
+            font-weight: 600;
+            font-size: 14px;
+            border-bottom: 1px solid #F0F0F0;
+        }
+        &__users{
+            height: 100%;
+        }
+    }
+    
+
+    .search_class{
+        width: 100%;
+        border-radius: 5px;
+        border: none;
+        padding-left: 50px;
+        font-size: 14px;
+    }
+
+    input:focus{
+        outline: none;
+    }
+
+    .card_user{
+        display: flex;
+        flex-direction: row;
+        height: 60px;
+        align-items: center;
+        border-bottom: 1px solid #F0F0F0;
+        cursor: pointer;
+        &__pic{
+            width: 80px;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            img{
+                display: flex;
+                width: 50px;
+                border-radius: 48px;
+                height: 80%;
+                object-fit: fill;
+            }
+        }
+        &__description{
+            display: flex;
+            flex-direction: row;
+            grid-gap: 5px;
+            &__title{
+                font-weight: 600;
+            }
+            &__user{
+                color:#7E84A3;
+            }
+        }
+    }
+
+    .user_no_found{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        flex-direction: column;
+    }
+
+    .card_user:hover{
+        background-color: #F0F0F0;
+        transition: 0.4s;
+    }
+
+    ::-webkit-scrollbar {
+        width: 5px;
+      }
+      
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1; 
+      }
+       
+      ::-webkit-scrollbar-thumb {
+        background: #A4A8BE; 
+      }
+      
+      ::-webkit-scrollbar-thumb:hover {
+        background: #7E84A3; 
+        transition: 0.4s;
+      }
+
+   
+}
+
